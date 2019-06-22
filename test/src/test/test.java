@@ -13,6 +13,7 @@ public class test {
 		String baseUrl = "http://twitter.com/";
 		String expectedTitle = "Twitter. It's what's happening.";
 		String actualTitle = "";
+		String name = "";
 		
 		//open browser and direct to base URL
 		driver.get(baseUrl);
