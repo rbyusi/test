@@ -22,9 +22,9 @@ public class test {
 		
 		//check page title
 		if(actualTitle.contentEquals(expectedTitle)) {
-			System.out.println("Test Passed!");
+			System.out.println("Test Title Passed!");
 		}else {
-			System.out.println("Test Failed!");
+			System.out.println("Test Title Failed!");
 		}
 		
 		//close browser
