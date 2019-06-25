@@ -2,6 +2,7 @@ package test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class test {
 
 	public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class test {
 		String baseUrl = "http://twitter.com/";
 		String expectedTitle = "Twitter. It's what's happening.";
 		String actualTitle = "";
-		String name = "";
+		
 		
 		//open browser and direct to base URL
 		driver.get(baseUrl);
@@ -26,7 +27,10 @@ public class test {
 			System.out.println("Test Title Passed!");
 		}else {
 			System.out.println("Test Title Failed!");
+			
 		}
+		
+		
 		
 		//close browser
 		driver.close();
