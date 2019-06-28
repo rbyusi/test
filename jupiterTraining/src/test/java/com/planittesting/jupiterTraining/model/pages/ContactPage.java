@@ -1,8 +1,11 @@
 package com.planittesting.jupiterTraining.model.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.planittesting.jupitertestingTraining.model.data.Contact;
 
 public class ContactPage extends BasePage {
 
@@ -19,9 +22,11 @@ public class ContactPage extends BasePage {
 	private By forenameErr = By.id("forename-err");
 	private By emailErr = By.id("email-err");
 	private By messageErr = By.id("message-err");
-	private By submitButton = By.className("btn-contact");
+	private By submitButton = By.id("contact-submit-btn");
 	private By successMessage = By.className("alert-success");
 	
+	private JavascriptExecutor js = (JavascriptExecutor) driver;  
+	   
 	
 	public void setEmailAddress(String email) {
 		driver.findElement(emailAddress).sendKeys(email);
@@ -89,8 +94,20 @@ public class ContactPage extends BasePage {
 		var wait = new WebDriverWait(driver,10);
 		var message = wait.until(d -> d.findElement(successMessage).getText());
 		
-		
 		return message;
+	}
+	
+	public void Scroll() {
+		js.executeScript("window.scrollBy(0,1000)");
+	}
+
+	public void enterSubmitContactInfo(Contact contact) {
+		setForename(contact.forename);
+		setSurname(contact.surname);
+		setEmailAddress(contact.email);
+		setPhone(contact.phone);
+		setMessage(contact.message);
+		
 	}
 
 

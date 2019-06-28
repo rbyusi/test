@@ -14,6 +14,8 @@ public class BasePage {
 	private By loginLink = By.id("nav-login");
 	private By logoutLink = By.id("nav-logout");
 	private By shopLink = By.id("nav-shop");
+	private By cartLink = By.className("cart-count");
+	private By cart = By.id("nav-cart");
 	private By loginDialog = By.className("popup");
 	private By logoutDialog = By.className("popup");
 	private By loggedInUser = By.className("user");
@@ -33,6 +35,10 @@ public class BasePage {
 	public void clickShop() {
 		driver.findElement(shopLink).click();
 	}
+	
+	public void clickCart() {
+		driver.findElement(cart).click();
+	}
 
 	public LogoutDialog clickLogout() {
 		driver.findElement(logoutLink).click();
@@ -47,8 +53,16 @@ public class BasePage {
 		return driver.findElement(loggedInUser).getText();
 	}
 
+	public String getCartText() {
+		return driver.findElement(cartLink).getText();
+	}
+	
 	public  String checkLoginLinkIfPresent() {
 		return driver.findElement(loginLink).getText();
+	}
+	
+	public void sendKeys(By elementLocator, String keysToSend) {
+		driver.findElement(elementLocator).sendKeys(keysToSend);
 	}
 
 }

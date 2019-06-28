@@ -10,7 +10,8 @@ public class HomePage extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 	
-	private By contactLink = By.cssSelector("#nav-contact > a");
+//	private By contactLink = By.cssSelector("#nav-contact > a");
+	private By contactLink = By.partialLinkText("Contact");
 		
 	public void clickContactLink() {
 		driver.findElement(contactLink).click();
