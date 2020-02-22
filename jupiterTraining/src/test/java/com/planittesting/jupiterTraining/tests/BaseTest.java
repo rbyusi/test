@@ -17,9 +17,11 @@ public class BaseTest {
 	AfterEachProcessor afterEachProcessor = new AfterEachProcessor();
 	
 	protected WebDriver driver;
+	
 
 	@BeforeEach
 	private void TestSetup() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver.exe");
 		driver = new ChromeDriver(); // ideally in config
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);

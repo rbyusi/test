@@ -4,9 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-
-import com.planittesting.jupiter.model.ui.Table;
 import com.planittesting.jupiterTraining.model.pages.CartPage;
 import com.planittesting.jupiterTraining.model.pages.CheckoutPage;
 import com.planittesting.jupiterTraining.model.pages.HomePage;
